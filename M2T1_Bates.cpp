@@ -5,6 +5,7 @@
 // We're going to make the simplest possible
 // "checkout" machine.
 #include <iostream>
+#include <iomanip> // for the 2 decimal places
 using namespace std;
 
 
@@ -12,13 +13,14 @@ int main() {
 
     // Set up all variables
     string first_name, last_name, full_name; // holds customer name
-    string product = "Pokemon card "; // change too whatever you like
+    string product = "Pokemon card"; // change too whatever you like
+    int amount_purchased;
     double cost_each = 0.99;
-    double total_cost;
+    double total_cost = 0.0;
 
 
     // Greet the customer
-    cout << "Welcome to our " << product << "store!" << endl;
+    cout << "Welcome to our " << product << " store!" << endl;
     cout << "Whats your first name? ";
     cin >> first_name;
     cout << "Whats your last name? ";
@@ -27,11 +29,19 @@ int main() {
     cout << "Nice to meet you, " << full_name << endl;
     
     // Ask how much they'd like to purchase
+    cout << "How many " << product << " would you like today? ";
+    cin >> amount_purchased;
 
     // Calculate total price
+    total_cost = amount_purchased * cost_each;
+
+    // Formatting: Set all prices to 2 decimal places
+    cout << setprecision(2) << fixed; 
+
     // Give the result
-
-
+    cout << "For " << amount_purchased << " " << product << endl;
+    cout << "That will be: $" << total_cost << endl;
+    cout << "Thank you for shopping with us!" << endl;
 
     return 0; // no errors
 }
