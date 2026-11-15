@@ -1,4 +1,4 @@
-// CCS - 134
+// CSC - 134
 // M5T2
 // Mario Bates
 // Partner: AI Navigator - ChatGPT
